@@ -25,9 +25,9 @@ body {
     background-color: red;
     width: 800px;
     height: 660px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #000;
+    box-shadow: 8px 8px 8px 2px rgba(0, 0, 0, 0.5);
+    border-style: hidden;
+    border-radius: 10px;
 }
 
 .etch-top {
@@ -46,7 +46,7 @@ body {
     width: 100px;
 }
 
-.screen {
+.etch-screen {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -72,9 +72,12 @@ body {
 }
 
 .etch-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100px;
 }
 
-.screen {
+.etch-screen {
     background-color: grey;
 }

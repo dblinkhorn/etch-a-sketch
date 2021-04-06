@@ -3,12 +3,12 @@
 // once created, the user can hover their mouse over the grid area and any div hovered over will change colors, or have other effects
 // the page will also have a reset button to clear the grid and the user will be able redefine the size of the grid
 
-let screen = document.getElementById("screen");
+let screen = document.getElementById("etch-screen");
 
 function addDivs (userNumber) {
     for (i=0; i < userNumber * userNumber; i++) {
         let newDiv = document.createElement("div");
-        document.getElementById("screen").appendChild(newDiv);
+        document.getElementById("etch-screen").appendChild(newDiv);
         newDiv.id = `div${i}`;
         newDiv.className = 'newDiv';
     }
