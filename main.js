@@ -4,14 +4,11 @@
 // the page will also have a reset button to clear the grid and the user will be able redefine the size of the grid
 
 let screen = document.getElementById("etch-screen");
-let newDiv;
-let i=0;
-let divArray;
 
 function addDivs (userNumber) {
 
     for (i=0; i < userNumber * userNumber; i++) {
-        newDiv = document.createElement("div");
+        let newDiv = document.createElement("div");
         document.getElementById("etch-screen").appendChild(newDiv);
         newDiv.id = `newDiv${i}`
         newDiv.className = `newDiv${i}`;
@@ -22,4 +19,21 @@ function addDivs (userNumber) {
     }
 }
 
-addDivs(100);
+function gridSizeInput() {
+    console.log("gridSizeInput called.");
+
+    let input = document.getElementById('grid-size').value;
+    console.log(input);
+
+    if(!isNaN(parseInt(input)) && (input > 0) && (input <= 100)) {
+        document.getElementById("etch-screen").innerHTML = "";
+        addDivs(input);
+    } else {
+        alert("You must enter an integer from 1 to 100.");
+    }
+}
+
+function clearScreen() {
+    document.getElementById("etch-screen").innerHTML = "";
+    alert("Screen cleared. Please enter a new resolution.");
+}

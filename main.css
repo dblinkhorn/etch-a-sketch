@@ -12,14 +12,21 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 30px 800px 100px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 30px 800px auto;
     color: #DDD;
-    background-color: navajowhite;
-    justify-items: center;
+    background-color: ivory;
     min-height: 100vh;
     padding: 0;
     margin: 0;
+}
+
+.etch-container {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
 }
 
 .etch-main {
@@ -39,6 +46,17 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 3em;
     color: gold;
+}
+
+.magic,
+.screen {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.5em;
+    color: gold;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
 .etch-middle {
@@ -82,11 +100,49 @@ body {
 
 .user-input {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    width: 800px;
+    grid-row: 2/3;
+    grid-column:2/3;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+    width: 250px;
     color: #000;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: none;
+    border-style: solid;
+    border-color: #000;
+    outline: none;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
+    width: 200px;
+  }
+
+.button,
+.button:focus {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline: none;
+    margin-top: 20px;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+.button:active {
+    border: none;
+    outline: none;
+}
+
+.button:hover {
+    background-color: gray;
 }
