@@ -5,32 +5,60 @@
         <title>Etch-A-Sketch</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div class="container" id="container">
-
             <div class="header" id="header">header</div>
-
-            <div class="user-input" id="user-input">user input</div>
-
             <div class="etch-main" id="etch-main">
-
-                <div class="etch-top" id="etch-top">etch top</div>
+                <div class="etch-top" id="etch-top">Etch A Sketch</div>
                 <div class="etch-middle" id="etch-middle">
-
-                    <div class="etch-left" id="class-left">
-                        etch left
+                    <div class="etch-left" id="class-left"></div>
+                    <div class="etch-screen" id="etch-screen"></div>
+                    <div class="etch-right" id="etch-right"></div>
+                </div>
+                <div class="etch-bottom" id="etch-bottom">
+                    <div class="circle-left" id="circle-left">
+                        <svg height="95" width="95">
+                            <filter id="dropshadow" height="130%">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
+                                <feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
+                                <feComponentTransfer>
+                                    <feFuncA type="linear" slope="0.5"/> <!-- slope is the opacity of the shadow -->
+                                </feComponentTransfer>
+                                <feMerge> 
+                                    <feMergeNode/> <!-- this contains the offset blurred image -->
+                                    <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+                                </feMerge>
+                            </filter>
+                            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="white" style="filter:url(#dropshadow)"/>
+                        </svg>
                     </div>
-                    <div class="etch-screen" id="etch-screen">
-                    </div>
-                    <div class="etch-right" id="etch-right">
-                        etch right
+                    <div class="circle-right" id="circle-right">
+                        <svg height="95" width="95">
+                            <filter id="dropshadow" height="130%">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
+                                <feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
+                                <feComponentTransfer>
+                                    <feFuncA type="linear" slope="0.5"/> <!-- slope is the opacity of the shadow -->
+                                </feComponentTransfer>
+                                <feMerge> 
+                                    <feMergeNode/> <!-- this contains the offset blurred image -->
+                                    <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+                                </feMerge>
+                            </filter>
+                            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="white" style="filter:url(#dropshadow)"/>
+                        </svg>
                     </div>
                 </div>
-
-                <div class="etch-bottom" id="etch-bottom">
-                    etch bottom
+                <div class="user-input" id="user-input">
+                    <form>
+                        <label for="grid-size">Set grid size:</label><br>
+                        <input type="text" id="grid-size" name="grid-size" placeholder="(Maximum value: 100)"><br>
+                        <input type="submit" value="Submit">
+                      </form> 
                 </div>
             </div>
         </div>
